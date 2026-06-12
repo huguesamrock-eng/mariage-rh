@@ -126,6 +126,20 @@
     .info-card-body { font-size: 14px; color: var(--creme-dark); opacity: 0.85; line-height: 1.8; }
     .info-card-body strong { color: var(--creme); font-weight: 400; }
 
+
+    /* FAQ */
+    #faq { background: var(--creme-dark); }
+    .faq-intro { font-size: 14px; color: var(--text-light); max-width: 680px; margin-bottom: 40px; line-height: 1.8; }
+    .faq-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .faq-item { background: rgba(255,255,255,0.35); border: 1px solid rgba(30,14,8,0.08); padding: 24px 26px; }
+    .faq-question { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: var(--chocolat); margin-bottom: 10px; line-height: 1.2; }
+    .faq-answer { font-size: 14px; color: var(--text-light); line-height: 1.75; }
+    .faq-answer strong { color: var(--chocolat); font-weight: 500; }
+    .faq-answer a { color: var(--terracotta); text-decoration: none; border-bottom: 1px solid rgba(196,98,45,0.35); }
+    .faq-answer ul { margin: 10px 0 0 18px; }
+    .faq-answer li { margin-bottom: 4px; }
+    .hotel-price { display: inline-block; margin-top: 12px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--or); border-top: 1px solid rgba(201,169,110,0.18); padding-top: 10px; }
+
     /* TRANSPORT */
     #transport { background: var(--creme); }
     .transport-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 48px; }
@@ -263,6 +277,7 @@
     <ul class="nav-links">
       <li><a href="#programme">Programme</a></li>
       <li><a href="#arrivee">Arrivée</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#transport">Transport</a></li>
       <li><a href="#hebergement">Hébergement</a></li>
       <li><a href="#restaurants">Restaurants</a></li>
@@ -275,6 +290,7 @@
   <div class="nav-mobile" id="navMobile">
     <a href="#programme" onclick="closeNav()">Programme</a>
     <a href="#arrivee" onclick="closeNav()">Arrivée</a>
+    <a href="#faq" onclick="closeNav()">FAQ</a>
     <a href="#transport" onclick="closeNav()">Transport</a>
     <a href="#hebergement" onclick="closeNav()">Hébergement</a>
     <a href="#restaurants" onclick="closeNav()">Restaurants</a>
@@ -508,7 +524,7 @@
       <div class="info-card reveal">
         <div class="info-card-icon">🛂</div>
         <p class="info-card-title">Documents requis</p>
-        <p class="info-card-body"><strong>Passeport valide 6 mois</strong> après la date d'arrivée.<br><strong>Visa obligatoire</strong> — demande en ligne via e-visa ivoirien ou retrait à l'aéroport.<br>Justificatif d'hébergement.</p>
+        <p class="info-card-body"><strong>Passeport valide 6 mois</strong> après la date d'arrivée.<br><strong>Visa obligatoire</strong> — demande en ligne via le site officiel SNEDAI.<br>Délai indicatif : <strong>72h à 1 semaine maximum</strong>.</p>
       </div>
       <div class="info-card reveal">
         <div class="info-card-icon">💊</div>
@@ -519,6 +535,103 @@
         <div class="info-card-icon">🌤️</div>
         <p class="info-card-title">Météo en novembre</p>
         <p class="info-card-body">Saison sèche. <strong>28–32°C</strong> le jour. Nuits douces (~24°C). Humidité modérée.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <p class="section-label reveal">Questions fréquentes</p>
+    <h2 class="section-title reveal">Préparer <em>votre voyage</em></h2>
+    <p class="faq-intro reveal">Les informations ci-dessous ont pour objectif de faciliter la préparation de votre séjour en Côte d’Ivoire. Cette section pourra être mise à jour à mesure que nous approcherons du mariage.</p>
+
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <p class="faq-question">Faut-il un visa pour entrer en Côte d’Ivoire ?</p>
+        <div class="faq-answer">
+          <p>Oui. Pour la plupart des voyageurs européens, un visa est obligatoire.</p>
+          <p>La demande peut être effectuée directement sur le site officiel : <a href="https://snedai.com/e-visa/" target="_blank" rel="noopener">SNEDAI – E-Visa Côte d’Ivoire</a>.</p>
+          <p>Le délai d’obtention est généralement compris entre <strong>72 heures et une semaine maximum</strong> après validation du dossier. Nous vous recommandons néanmoins d’effectuer votre demande plusieurs semaines avant votre départ afin de voyager sereinement.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <p class="faq-question">Le vaccin contre la fièvre jaune est-il obligatoire ?</p>
+        <div class="faq-answer">
+          <p>Oui. Le certificat international de vaccination contre la fièvre jaune est exigé à l’entrée du territoire ivoirien.</p>
+          <p>En cas d’oubli ou d’organisation de dernière minute, une vaccination peut généralement être réalisée directement à l’aéroport d’Abidjan moyennant des frais d’environ <strong>25 €</strong>.</p>
+          <p>Nous vous recommandons toutefois d’effectuer cette démarche avant votre départ afin d’éviter toute attente supplémentaire à votre arrivée.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <p class="faq-question">Quelle monnaie utiliser ?</p>
+        <div class="faq-answer">
+          <p>La monnaie locale est le <strong>Franc CFA</strong>.</p>
+          <ul>
+            <li>1 € ≈ 655 FCFA</li>
+            <li>10 € ≈ 6 550 FCFA</li>
+            <li>100 € ≈ 65 500 FCFA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <p class="faq-question">Parle-t-on français en Côte d’Ivoire ?</p>
+        <div class="faq-answer">
+          <p>Oui. Le français est la langue officielle de la Côte d’Ivoire et est parlé partout dans le pays.</p>
+          <p>Vous pourrez communiquer facilement à l’aéroport, dans les hôtels, les restaurants, les commerces, les taxis et avec la grande majorité des personnes que vous rencontrerez durant votre séjour.</p>
+          <p>Vous entendrez également de nombreuses expressions locales et du nouchi, le parler populaire ivoirien, qui participent au charme et à la richesse culturelle du pays.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <p class="faq-question">Peut-on payer par carte bancaire ?</p>
+        <div class="faq-answer">
+          <p>Oui, dans la plupart des hôtels, restaurants et commerces modernes.</p>
+          <p>Il est néanmoins recommandé de disposer d’un peu d’espèces pour les petits achats, certains déplacements et les dépenses du quotidien.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <p class="faq-question">Quel budget prévoir sur place ?</p>
+        <div class="faq-answer">
+          <ul>
+            <li>VTC en ville : généralement entre 2 000 et 10 000 FCFA</li>
+            <li>Restaurant : environ 5 000 à 25 000 FCFA selon le lieu</li>
+            <li>Nuitée à Assinie : 100 000 FCFA par chambre</li>
+            <li>Balade en pirogue : 15 000 FCFA</li>
+            <li>Massage : 20 000 FCFA</li>
+            <li>Jet ski : 45 000 FCFA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <p class="faq-question">Comment se rendre à Assinie ?</p>
+        <div class="faq-answer">
+          <p>Une navette dédiée sera mise à disposition des invités concernés le jour du mariage afin d’assurer les déplacements entre Abidjan et Assinie.</p>
+          <p>Les modalités précises — horaires, point de départ et organisation des retours — seront communiquées ultérieurement aux invités concernés.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <p class="faq-question">Puis-je réserver un chauffeur privé pour mon séjour ?</p>
+        <div class="faq-answer">
+          <p>Oui. Pour les invités qui souhaitent bénéficier d’un chauffeur privé à la journée ou pendant toute la durée de leur séjour, nous pouvons partager des contacts de confiance sur simple demande.</p>
+          <p>Cette solution peut être particulièrement confortable pour les familles, les groupes d’amis ou les invités souhaitant découvrir Abidjan et ses environs en toute sérénité.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <p class="faq-question">La Côte d’Ivoire est-elle sûre ?</p>
+        <div class="faq-answer">
+          <p>Comme dans toute grande ville, il convient de rester vigilant.</p>
+          <p>Nous recommandons d’utiliser Yango ou Uber, d’éviter les déplacements isolés tard le soir et de conserver passeport et objets de valeur dans un lieu sécurisé.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -555,21 +668,22 @@
     <p class="section-label reveal">Où dormir</p>
     <h2 class="section-title reveal" style="color:var(--creme);">Hébergement <em>recommandé</em></h2>
     <p style="color:var(--creme-dark); font-size:14px; opacity:0.8; max-width:600px;" class="reveal">Sélection d'hôtels et quartiers conseillés pour un séjour confortable à Abidjan.</p>
+    <p style="color:var(--creme-dark); font-size:12px; opacity:0.65; max-width:620px; margin-top:10px; font-style:italic;" class="reveal">Tarifs indicatifs susceptibles d’évoluer selon la période de réservation et les disponibilités.</p>
 
     <p style="margin-top:32px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:var(--or);" class="reveal">Hôtels haut de gamme</p>
     <div class="hotel-grid">
-      <div class="hotel-card reveal"><p class="hotel-tier">★★★★★</p><p class="hotel-name">Hôtel Ivoire – Sofitel</p><p class="hotel-desc">Symbole emblématique d'Abidjan. Vue panoramique sur la lagune.</p></div>
-      <div class="hotel-card reveal"><p class="hotel-tier">★★★★★</p><p class="hotel-name">Noom Hotel Abidjan Plateau</p><p class="hotel-desc">Design moderne au Plateau. Rooftop emblématique avec vue sur la ville.</p></div>
-      <div class="hotel-card reveal"><p class="hotel-tier">★★★★</p><p class="hotel-name">Novotel Abidjan Marcory</p><p class="hotel-desc">Confort premium à Marcory, l'un des quartiers les plus dynamiques.</p></div>
-      <div class="hotel-card reveal"><p class="hotel-tier">★★★★</p><p class="hotel-name">La Maison Palmier</p><p class="hotel-desc">Élégance discrète et cadre verdoyant à Cocody.</p></div>
+      <div class="hotel-card reveal"><p class="hotel-tier">★★★★★</p><p class="hotel-name">Hôtel Ivoire – Sofitel</p><p class="hotel-desc">Symbole emblématique d'Abidjan. Vue panoramique sur la lagune.</p><span class="hotel-price">À partir de 220–350 € / nuit</span></div>
+      <div class="hotel-card reveal"><p class="hotel-tier">★★★★★</p><p class="hotel-name">Noom Hotel Abidjan Plateau</p><p class="hotel-desc">Design moderne au Plateau. Rooftop emblématique avec vue sur la ville.</p><span class="hotel-price">À partir de 170–280 € / nuit</span></div>
+      <div class="hotel-card reveal"><p class="hotel-tier">★★★★</p><p class="hotel-name">Novotel Abidjan Marcory</p><p class="hotel-desc">Confort premium à Marcory, l'un des quartiers les plus dynamiques.</p><span class="hotel-price">À partir de 130–220 € / nuit</span></div>
+      <div class="hotel-card reveal"><p class="hotel-tier">★★★★</p><p class="hotel-name">La Maison Palmier</p><p class="hotel-desc">Élégance discrète et cadre verdoyant à Cocody.</p><span class="hotel-price">À partir de 180–300 € / nuit</span></div>
     </div>
 
     <p style="margin-top:48px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:var(--or);" class="reveal">Maisons d'hôtes — excellent rapport qualité/prix</p>
     <div class="hotel-grid">
-      <div class="hotel-card reveal"><p class="hotel-tier">Cocody</p><p class="hotel-name">Villa Mango</p><p class="hotel-desc">Maison d'hôtes de charme. Jardin tropical, piscine, hospitalité ivoirienne.</p></div>
-      <div class="hotel-card reveal"><p class="hotel-tier">Cocody</p><p class="hotel-name">Villa Jaddis</p><p class="hotel-desc">Cadre calme et résidentiel. Jardin, terrasse, piscine extérieure.</p></div>
-      <div class="hotel-card reveal"><p class="hotel-tier">Cocody</p><p class="hotel-name">Villa Oasis Abidjan</p><p class="hotel-desc">Maison d'hôtes élégante dans le quartier prisé de Cocody.</p></div>
-      <div class="hotel-card reveal"><p class="hotel-tier">Marcory</p><p class="hotel-name">Hotel Epic Abidjan</p><p class="hotel-desc">Cadre moderne et élégant au cœur d'un quartier cosmopolite.</p></div>
+      <div class="hotel-card reveal"><p class="hotel-tier">Cocody</p><p class="hotel-name">Villa Mango</p><p class="hotel-desc">Maison d'hôtes de charme. Jardin tropical, piscine, hospitalité ivoirienne.</p><span class="hotel-price">À partir de 70–120 € / nuit</span></div>
+      <div class="hotel-card reveal"><p class="hotel-tier">Cocody</p><p class="hotel-name">Villa Jaddis</p><p class="hotel-desc">Cadre calme et résidentiel. Jardin, terrasse, piscine extérieure.</p><span class="hotel-price">À partir de 80–140 € / nuit</span></div>
+      <div class="hotel-card reveal"><p class="hotel-tier">Cocody</p><p class="hotel-name">Villa Oasis Abidjan</p><p class="hotel-desc">Maison d'hôtes élégante dans le quartier prisé de Cocody.</p><span class="hotel-price">À partir de 90–150 € / nuit</span></div>
+      <div class="hotel-card reveal"><p class="hotel-tier">Marcory</p><p class="hotel-name">Hotel Epic Abidjan</p><p class="hotel-desc">Cadre moderne et élégant au cœur d'un quartier cosmopolite.</p><span class="hotel-price">À partir de 90–160 € / nuit</span></div>
     </div>
 
     <div class="quartier-section reveal">
