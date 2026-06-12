@@ -205,6 +205,16 @@
     .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--chocolat); background: white; }
     .form-row textarea { resize: vertical; min-height: 80px; }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .rsvp-info-box { background: rgba(255,255,255,0.35); border-left: 4px solid var(--chocolat); padding: 24px; margin-bottom: 32px; color: var(--chocolat-mid); }
+    .rsvp-info-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-style: italic; margin-bottom: 12px; color: var(--chocolat); font-weight: 400; }
+    .rsvp-info-box p { font-size: 14px; line-height: 1.7; margin-bottom: 10px; }
+    .rsvp-info-box ul { margin: 12px 0 12px 20px; }
+    .rsvp-info-box li { margin-bottom: 6px; font-size: 14px; color: var(--chocolat-mid); }
+    .form-section-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: var(--chocolat); margin: 28px 0 12px; }
+    .choice-group { display: grid; gap: 10px; }
+    .choice-item { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background: rgba(255,255,255,0.35); border: 1px solid rgba(30,14,8,0.12); font-size: 14px; color: var(--chocolat-mid); line-height: 1.5; cursor: pointer; }
+    .choice-item input { width: auto; margin-top: 4px; accent-color: var(--chocolat); }
+    .consent-box { margin-top: 24px; }
     @media (max-width: 500px) { .form-grid { grid-template-columns: 1fr; } .rsvp-section { padding: 40px 20px; } }
     .guest-block { background: rgba(255,255,255,0.3); padding: 20px; margin-bottom: 12px; border: 1px solid rgba(30,14,8,0.1); }
     .guest-block-title { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--chocolat); font-weight: 500; margin-bottom: 14px; }
@@ -657,57 +667,127 @@
     <!-- RSVP FORMULAIRE -->
     <div class="rsvp-section reveal">
       <h3 class="rsvp-title">Confirmez votre présence</h3>
-      <p class="rsvp-desc">Merci de confirmer votre présence ainsi que celle de chaque personne de votre groupe.</p>
-      <span class="rsvp-deadline">Date limite : 1er juillet 2026</span>
+      <p class="rsvp-desc">Merci de confirmer votre présence et de nous indiquer vos préférences pour votre séjour à Assinie.</p>
+      <span class="rsvp-deadline">Date limite : 20 juillet 2026</span>
 
       <form class="rsvp-form" id="rsvpForm" action="https://formspree.io/f/xqeokloe" method="POST">
-        <input type="hidden" name="_subject" value="RSVP Mariage R&H — Abidjan 5 nov. 2026" />
+        <input type="hidden" name="_subject" value="RSVP Mariage R&H — Assinie & Villa Touraco" />
         <input type="hidden" name="_replyto" value="hugues.amrock@gmail.com" />
 
-        <div id="guestList">
-          <div class="guest-block" id="guest-1">
-            <p class="guest-block-title">Invité 1</p>
-            <div class="form-grid">
-              <div class="form-row">
-                <label>Prénom *</label>
-                <input type="text" name="prenom_1" required placeholder="Prénom" />
-              </div>
-              <div class="form-row">
-                <label>Nom *</label>
-                <input type="text" name="nom_1" required placeholder="Nom" />
-              </div>
-            </div>
-            <div class="form-row">
-              <label>Numéro de téléphone *</label>
-              <input type="tel" name="tel_1" required placeholder="+33 6 XX XX XX XX" />
-            </div>
+        <div class="rsvp-info-box">
+          <h4>Informations complémentaires – Assinie</h4>
+          <p>Pour les invités souhaitant séjourner à Villa Touraco, la nuitée est proposée au tarif de <strong>100 000 FCFA par chambre</strong>.</p>
+          <p>Des activités facultatives seront proposées après le brunch du vendredi :</p>
+          <ul>
+            <li>Balade en pirogue — <strong>15 000 FCFA</strong></li>
+            <li>Massage — <strong>20 000 FCFA</strong></li>
+            <li>Jet ski — <strong>45 000 FCFA</strong></li>
+          </ul>
+          <p>Ces prestations sont entièrement facultatives et à la charge de chaque invité.</p>
+        </div>
+
+        <p class="form-section-title">Vos coordonnées</p>
+        <div class="form-grid">
+          <div class="form-row">
+            <label>Prénom *</label>
+            <input type="text" name="prenom" required placeholder="Prénom" />
+          </div>
+          <div class="form-row">
+            <label>Nom *</label>
+            <input type="text" name="nom" required placeholder="Nom" />
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-row">
+            <label>E-mail *</label>
+            <input type="email" name="email" required placeholder="votre@email.com" />
+          </div>
+          <div class="form-row">
+            <label>Téléphone *</label>
+            <input type="tel" name="telephone" required placeholder="+33 6 XX XX XX XX" />
           </div>
         </div>
 
-        <button type="button" class="add-guest-btn" onclick="addGuest()">+ Ajouter une personne</button>
-
         <div class="form-row">
-          <label>Options souhaitées pour Assinie (cercle restreint)</label>
-          <select name="option_assinie">
+          <label>Quel est votre lien avec les mariés ? *</label>
+          <select name="lien_maries" required>
             <option value="">— Sélectionner —</option>
-            <option value="depart_vendredi">Départ vendredi 6/11 après le brunch</option>
-            <option value="prolongation_weekend">Prolongation week-end : ven. 6/11 → dim. 8/11 (petit-déj inclus)</option>
+            <option value="famille_rose">Famille de Rose</option>
+            <option value="famille_hugues">Famille de Hugues</option>
+            <option value="amis_rose">Amis de Rose</option>
+            <option value="amis_hugues">Amis de Hugues</option>
           </select>
         </div>
 
+        <p class="form-section-title">Confirmation de présence</p>
         <div class="form-row">
-          <label>Activité après le brunch (optionnelle, payante)</label>
-          <select name="activite_brunch">
-            <option value="">— Aucune activité —</option>
-            <option value="pirogue">Visite en pirogue</option>
-            <option value="massage">Massage</option>
-            <option value="jetski">Jet ski</option>
+          <label>Présence *</label>
+          <select name="presence" required>
+            <option value="">— Sélectionner —</option>
+            <option value="present">Je serai présent(e)</option>
+            <option value="absent">Je ne pourrai malheureusement pas être présent(e)</option>
           </select>
         </div>
 
+        <p class="form-section-title">Hébergement à Villa Touraco</p>
+        <div class="form-row">
+          <label>Souhaitez-vous réserver une chambre ? *</label>
+          <select name="reservation_chambre" required>
+            <option value="">— Sélectionner —</option>
+            <option value="oui">Oui, je souhaite réserver une chambre</option>
+            <option value="non">Non, je ne souhaite pas réserver de chambre</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Nombre de chambres souhaitées</label>
+          <select name="nombre_chambres">
+            <option value="">— Sélectionner si concerné —</option>
+            <option value="1">1 chambre</option>
+            <option value="2">2 chambres</option>
+            <option value="3_plus">3 chambres ou plus</option>
+          </select>
+        </div>
+
+        <p class="form-section-title">Après le brunch du vendredi 6 novembre</p>
+        <div class="form-row">
+          <label>Organisation souhaitée *</label>
+          <select name="organisation_apres_brunch" required>
+            <option value="">— Sélectionner —</option>
+            <option value="retour_abidjan">Retour à Abidjan après le brunch</option>
+            <option value="prolongation_dimanche">Prolongation du séjour jusqu'au dimanche 8 novembre</option>
+          </select>
+        </div>
+
+        <p class="form-section-title">Activités facultatives</p>
+        <div class="form-row">
+          <label>Activité(s) souhaitée(s)</label>
+          <div class="choice-group">
+            <label class="choice-item"><input type="checkbox" name="activites[]" value="pirogue_15000_fcfa" /> Balade en pirogue — 15 000 FCFA</label>
+            <label class="choice-item"><input type="checkbox" name="activites[]" value="massage_20000_fcfa" /> Massage — 20 000 FCFA</label>
+            <label class="choice-item"><input type="checkbox" name="activites[]" value="jetski_45000_fcfa" /> Jet ski — 45 000 FCFA</label>
+            <label class="choice-item"><input type="checkbox" name="activites[]" value="aucune" /> Aucune activité</label>
+          </div>
+        </div>
+
+        <p class="form-section-title">Informations complémentaires</p>
+        <div class="form-row">
+          <label>Régime alimentaire particulier</label>
+          <input type="text" name="regime_alimentaire" placeholder="Végétarien, halal, sans porc..." />
+        </div>
+        <div class="form-row">
+          <label>Allergies alimentaires</label>
+          <input type="text" name="allergies" placeholder="Précisez vos allergies éventuelles" />
+        </div>
         <div class="form-row">
           <label>Message ou question (facultatif)</label>
           <textarea name="message" placeholder="Un message pour les mariés..."></textarea>
+        </div>
+
+        <div class="form-row consent-box">
+          <label class="choice-item">
+            <input type="checkbox" name="validation_frais" required value="oui" />
+            Je confirme avoir pris connaissance des conditions d'hébergement à Assinie ainsi que des éventuels frais liés aux activités facultatives.
+          </label>
         </div>
 
         <button type="submit" class="submit-btn">Confirmer ma présence →</button>
@@ -715,7 +795,7 @@
 
       <div class="form-success" id="formSuccess">
         <h3>Merci !</h3>
-        <p>Votre présence a bien été confirmée. Nous avons hâte de vous retrouver à Abidjan.</p>
+        <p>Votre réponse a bien été enregistrée. Nous avons hâte de vous retrouver à Abidjan et à Assinie.</p>
         <p style="margin-top:8px; font-style:italic; opacity:0.7;">Rose & Hugues</p>
       </div>
     </div>
@@ -744,29 +824,6 @@
   // Mobile nav
   function toggleNav() { document.getElementById('navMobile').classList.toggle('open'); }
   function closeNav() { document.getElementById('navMobile').classList.remove('open'); }
-
-  // Add guest
-  let guestCount = 1;
-  function addGuest() {
-    guestCount++;
-    const block = document.createElement('div');
-    block.className = 'guest-block';
-    block.id = 'guest-' + guestCount;
-    block.innerHTML = `
-      <button type="button" class="remove-guest-btn" onclick="removeGuest(${guestCount})">×</button>
-      <p class="guest-block-title">Invité ${guestCount}</p>
-      <div class="form-grid">
-        <div class="form-row"><label>Prénom *</label><input type="text" name="prenom_${guestCount}" required placeholder="Prénom" /></div>
-        <div class="form-row"><label>Nom *</label><input type="text" name="nom_${guestCount}" required placeholder="Nom" /></div>
-      </div>
-      <div class="form-row"><label>Numéro de téléphone *</label><input type="tel" name="tel_${guestCount}" required placeholder="+33 6 XX XX XX XX" /></div>
-    `;
-    document.getElementById('guestList').appendChild(block);
-  }
-  function removeGuest(id) {
-    const el = document.getElementById('guest-' + id);
-    if (el) el.remove();
-  }
 
   // Form submission via Formspree
   document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
